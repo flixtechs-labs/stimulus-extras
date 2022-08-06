@@ -1,18 +1,26 @@
 {
-    "name": "flixechs-labs/turbo-laravel-helpers",
+    "name": "flixtechs-labs/turbo-laravel-helpers",
     "description": "The missing laravel blade helpers for turbo and stimulus",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "FlixechsLabs\\TurboLaravelHelpers\\": "src/"
-        }
+            "FlixtechsLabs\\TurboLaravelHelpers\\": "src/"
+        },
+        "files": [
+          "src/View/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "FlixtechsLabs\\TurboLaravelHelpers\\Tests\\": "tests/"
+      }
     },
     "authors": [
         {
             "name": "Given Ncube",
             "email": "given@flixtechs.co.zw",
-            "homepage": "https://www.flixtechs.co.zw"
+            "homepage": "https://flixtechs.co.zw"
         }
     ],
     "require": {
@@ -24,6 +32,20 @@
     "config": {
         "sort-packages": true,
         "preferred-install": "dist",
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+      },
+    "require-dev": {
+        "orchestra/testbench": "^7.6",
+        "pestphp/pest": "^1.21"
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "FlixtechsLabs\\TurboLaravelHelpers\\Providers\\TurboHelpersServiceProvider"
+        ]
       }
+    }
 }
