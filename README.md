@@ -1,4 +1,16 @@
 
+<p align="center">
+    <a href="https://packagist.org/packages/flixtechs-labs/turbo-laravel-helpers">
+        <img src="https://img.shields.io/packagist/dt/flixtechs-labs/turbo-laravel-helpers" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/flixtechs-labs/turbo-laravel-helper">
+        <img src="https://img.shields.io/packagist/v/flixtechs-labs/turbo-laravel-helpers" alt="Latest Stable Version">
+    </a>
+    <a href="https://packagist.org/packages/flixtechs-labs/turbo-laravel-helperl">
+        <img src="https://img.shields.io/packagist/l/flixtechs-labs/turbo-laravel-helpers" alt="License">
+    </a>
+</p>
+
 # Turbo Laravel Helpers
 
 The missing stimulus helpers for laravel blade! This package contains a bunch of helpers that pairs nicely with `tonysm/turbo-laravel` package. 
