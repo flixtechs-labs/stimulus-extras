@@ -56,5 +56,4 @@ composer test
 ```
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
+[MIT](https://github.com/flixtechs-labs/turbo-laravel-helpers/blob/master/LICENSE)
