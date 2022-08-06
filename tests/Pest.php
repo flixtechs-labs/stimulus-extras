@@ -4,7 +4,7 @@ use FlixtechsLabs\TurboLaravelHelpers\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 
-it('can add a stimulus controller when called',  function () {
+it('can add a stimulus controller when called', function () {
     $this->assertEquals('data-controller="helo" ', stimulus_controller('helo'));
 
     $this->assertEquals('data-controller="hello" data-hello-user-value="world"', stimulus_controller('hello', [
@@ -13,11 +13,9 @@ it('can add a stimulus controller when called',  function () {
 });
 
 it('can add multiple stimulus controllers when called', function ($controllers) {
-
     $attribute = 'data-controller="';
 
-    foreach($controllers as $key => $controller) {
-
+    foreach ($controllers as $key => $controller) {
         if ($key == count($controllers) - 1) {
             $attribute .= $controller . '" ';
             continue;
@@ -27,7 +25,6 @@ it('can add multiple stimulus controllers when called', function ($controllers) 
     }
 
     $this->assertEquals($attribute, stimulus_controllers(...$controllers));
-
 })->with([
     [['player', 'controls', 'playlist']],
     [['profile', 'image-upload']]
@@ -39,12 +36,12 @@ it('can add multiple stimulus controllers when called with values', function () 
     ]], 'controls'));
 });
 
-it('can add a stimulus action when called',  function () {
-   $this->assertEquals('data-action="click->controls#pause"', stimulus_action('controls', 'pause', 'click'));
+it('can add a stimulus action when called', function () {
+    $this->assertEquals('data-action="click->controls#pause"', stimulus_action('controls', 'pause', 'click'));
 });
 
 it('can add multiple stimulus actions when called', function () {
-   $this->assertEquals('data-action="click->controls#pause click->player#updatePosition"', stimulus_actions([
+    $this->assertEquals('data-action="click->controls#pause click->player#updatePosition"', stimulus_actions([
         'controls' => ['pause', 'click'],
         'player' => ['updatePosition', 'click']
     ]));
@@ -55,5 +52,5 @@ it('can add a stimulus target when called', function () {
 });
 
 it('can add multiple stimulus targets when called', function () {
-   $this->assertEquals('data-player-target="cover" data-controls-target="progress"', stimulus_targets([['player', 'cover'], ['controls', 'progress']]));
+    $this->assertEquals('data-player-target="cover" data-controls-target="progress"', stimulus_targets([['player', 'cover'], ['controls', 'progress']]));
 });

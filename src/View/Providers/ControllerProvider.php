@@ -33,7 +33,7 @@ class ControllerProvider extends AbstractProvider
         array_push($this->controllers, $controller);
 
         collect($values)->each(function ($value, $key) use ($controller) {
-           $this->values['data-' . $controller . '-' . Str::kebab($key) . '-value'] = $this->getFormattedValue($value);
+            $this->values['data-' . $controller . '-' . Str::kebab($key) . '-value'] = $this->getFormattedValue($value);
         });
     }
 

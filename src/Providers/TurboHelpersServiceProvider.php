@@ -10,6 +10,5 @@ final class TurboHelpersServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-
     }
 }
