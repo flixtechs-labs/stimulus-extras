@@ -1,0 +1,29 @@
+{
+    "name": "flixechs-labs/turbo-laravel-helpers",
+    "description": "The missing laravel blade helpers for turbo and stimulus",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "FlixechsLabs\\TurboLaravelHelpers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Given Ncube",
+            "email": "given@flixtechs.co.zw",
+            "homepage": "https://www.flixtechs.co.zw"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.23"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+      }
+}
