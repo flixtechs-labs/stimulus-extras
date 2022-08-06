@@ -49,5 +49,10 @@
           "FlixtechsLabs\\TurboLaravelHelpers\\Providers\\TurboHelpersServiceProvider"
         ]
       }
-    }
+    },
+    "scripts": {
+      "test": [
+          "./vendor/bin/pest"
+      ]
+  }
 }
