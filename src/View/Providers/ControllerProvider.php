@@ -9,14 +9,14 @@ class ControllerProvider extends AbstractProvider
     /**
      * The stimulus controlelrs
      *
-     * @var array
+     * @var array<int, string>
      */
     protected array $controllers = [];
 
     /**
      * The stimulus values
      *
-     * @var array
+     * @var array<string, string>
      */
     protected array $values = [];
 
@@ -24,11 +24,11 @@ class ControllerProvider extends AbstractProvider
      * Add stimulus controller to element
      *
      * @param string $controller
-     * @param array $values
+     * @param array<string, string> $values
      *
      * @return void
      */
-    public function addController(string $controller, array $values = [])
+    public function addController(string $controller, array $values = []): void
     {
         array_push($this->controllers, $controller);
 

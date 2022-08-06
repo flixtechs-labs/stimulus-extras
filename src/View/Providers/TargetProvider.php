@@ -9,7 +9,7 @@ class TargetProvider extends AbstractProvider
     /**
      * The stimulus targets
      *
-     * @var array
+     * @var array<string, string>
      */
     protected array $targets = [];
 
@@ -19,7 +19,7 @@ class TargetProvider extends AbstractProvider
      * @param string $controller
      * @param string $target
      *
-     * @return never
+     * @return void
      */
     public function addTarget(string $controller, string $target): void
     {

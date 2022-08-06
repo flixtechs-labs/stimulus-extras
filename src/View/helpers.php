@@ -10,7 +10,7 @@ if (!function_exists('stimulus_controller')) {
      * Set the stimulus controller on an element
      *
      * @param string $controller
-     * @param array $values
+     * @param array<string, string> $values
      * @return HtmlString
      */
     function stimulus_controller(string $controller, array $values = [])
@@ -77,7 +77,7 @@ if (!function_exists('stimulus_action')) {
      * @param string $controller
      * @param string $action
      * @param string|null $event
-     * @param array $params
+     * @param array<string, string> $params
      * @return HtmlString
      */
     function stimulus_action(string $controller, string $action, string $event = null, array $params = [])
@@ -94,7 +94,7 @@ if (!function_exists('stimulus_actions')) {
     /**
      * Set multiple stimulus actions on an element
      *
-     * @param array $actions
+     * @param array<string, array<string>> $actions
      * @return HtmlString
      */
     function stimulus_actions(array $actions)
@@ -131,7 +131,7 @@ if (!function_exists('stimulus_targets')) {
     /**
      * Set multiple stimulus targets on an element
      *
-     * @param array $targets
+     * @param array<int, array<string>> $targets
      * @return HtmlString
      */
     function stimulus_targets(array $targets)

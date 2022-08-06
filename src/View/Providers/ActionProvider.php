@@ -7,18 +7,27 @@ class ActionProvider extends AbstractProvider
     /**
      * The stimulus actions
      *
-     * @var array
+     * @var array<string, string>
      */
     protected array $actions = [];
 
     /**
      * The stimulus params
      *
-     * @var array
+     * @var array<string, string>
      */
     protected array $parameters = [];
 
-    public function addAction(string $controller, string $action, ?string $event = null, array $params = [])
+    /**
+     * Add the stimulus action
+     *
+     * @param string $controller
+     * @param string $action
+     * @param string|null $event
+     * @param array<string, string> $params
+     * @return void
+     */
+    public function addAction(string $controller, string $action, ?string $event = null, array $params = []): void
     {
         $this->actions[$controller] = is_null($event) ? e($controller, false) . '#' . e($action) : e($event) . '->' . e($controller, false) . '#' . e($action);
 

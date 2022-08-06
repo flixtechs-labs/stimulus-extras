@@ -4,7 +4,7 @@ namespace FlixtechsLabs\TurboLaravelHelpers\View\Providers;
 
 abstract class AbstractProvider
 {
-    protected function getFormattedValue(mixed $value)
+    protected function getFormattedValue(mixed $value): string
     {
         if ($value instanceof \Stringable || (is_object($value) && is_callable([$value, '__toString']))) {
             return e($value, false);
