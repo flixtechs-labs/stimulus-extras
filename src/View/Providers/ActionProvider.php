@@ -7,7 +7,7 @@ class ActionProvider extends AbstractProvider
     /**
      * The stimulus actions
      *
-     * @var array<string, string>
+     * @var array<string>
      */
     protected array $actions = [];
 
@@ -29,7 +29,7 @@ class ActionProvider extends AbstractProvider
      */
     public function addAction(string $controller, string $action, ?string $event = null, array $params = []): void
     {
-        $this->actions[$controller] = is_null($event) ? e($controller, false) . '#' . e($action) : e($event) . '->' . e($controller, false) . '#' . e($action);
+        $this->actions[] = is_null($event) ? e($controller, false) . '#' . e($action) : e($event) . '->' . e($controller, false) . '#' . e($action);
 
         foreach ($params as $name => $value) {
             $this->parameters['data-' . e($controller, false) . '-' . e($name) . '-param'] = $this->getFormattedValue($value);

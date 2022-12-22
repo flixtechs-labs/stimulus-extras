@@ -16,7 +16,7 @@ it('can add multiple stimulus controllers when called', function ($controllers) 
     $attribute = 'data-controller="';
 
     foreach ($controllers as $key => $controller) {
-        if ($key == count($controllers) - 1) {
+        if ($key === count($controllers) - 1) {
             $attribute .= $controller . '" ';
             continue;
         }
@@ -42,8 +42,8 @@ it('can add a stimulus action when called', function () {
 
 it('can add multiple stimulus actions when called', function () {
     $this->assertEquals('data-action="click->controls#pause click->player#updatePosition"', stimulus_actions([
-        'controls' => ['pause', 'click'],
-        'player' => ['updatePosition', 'click']
+        ['controls' => ['pause', 'click']],
+        ['player' => ['updatePosition', 'click']]
     ]));
 });
 
