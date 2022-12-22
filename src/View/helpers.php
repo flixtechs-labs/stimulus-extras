@@ -30,7 +30,7 @@ if (!function_exists('stimulus_controllers')) {
      * @param mixed ...$controllers
      * @return HtmlString
      */
-    function stimulus_controllers(...$controllers)
+    function stimulus_controllers(...$controllers): HtmlString
     {
         if (count($controllers) < 1) {
             throw new InvalidArgumentException("The stimulus_controllers function requires at least one argument");
@@ -38,9 +38,10 @@ if (!function_exists('stimulus_controllers')) {
 
         $provider = new ControllerProvider();
 
-        collect($controllers)->each(function ($controller) use ($provider) {
+        foreach ($controllers as $controller) {
             if (is_string($controller)) {
-                return $provider->addController($controller, []);
+                $provider->addController($controller, []);
+                continue;
             }
 
             if (is_array($controller)) {
@@ -58,13 +59,14 @@ if (!function_exists('stimulus_controllers')) {
                     throw new InvalidArgumentException("stimulus_controllers(...) requires the second item in the array to be of type array {$type} given");
                 }
 
-                return $provider->addController($key, $value);
+                $provider->addController($key, $value);
+                continue;
             }
 
             $type = gettype($controller);
 
             throw new InvalidArgumentException("stimulus_controllers(...) requires the argument to be either of type array or string {$type} given");
-        });
+        }
 
         return new HtmlString($provider);
     }
@@ -80,13 +82,13 @@ if (!function_exists('stimulus_action')) {
      * @param array<string, string> $params
      * @return HtmlString
      */
-    function stimulus_action(string $controller, string $action, string $event = null, array $params = [])
+    function stimulus_action(string $controller, string $action, string $event = null, array $params = []): HtmlString
     {
-        $provder = new ActionProvider();
+        $provider = new ActionProvider();
 
-        $provder->addAction($controller, $action, $event, $params);
+        $provider->addAction($controller, $action, $event, $params);
 
-        return new HtmlString($provder);
+        return new HtmlString($provider);
     }
 }
 
@@ -94,18 +96,18 @@ if (!function_exists('stimulus_actions')) {
     /**
      * Set multiple stimulus actions on an element
      *
-     * @param array<string, array<string>> $actions
+     * @param array<int, array<string, array<string>>> $actions
      * @return HtmlString
      */
-    function stimulus_actions(array $actions)
+    function stimulus_actions(array $actions): HtmlString
     {
-        $provder = new ActionProvider();
+        $provider = new ActionProvider();
 
-        collect($actions)->each(function ($params, $controller) use ($provder) {
-            $provder->addAction($controller, ...$params);
-        });
+        foreach ($actions as $action) {
+            collect($action)->each(fn($params, $controller) => $provider->addAction($controller, ...$params));
+        }
 
-        return new HtmlString($provder);
+        return new HtmlString($provider);
     }
 }
 
