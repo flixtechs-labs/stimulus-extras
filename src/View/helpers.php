@@ -10,7 +10,7 @@ if (!function_exists('stimulus_controller')) {
      * Set the stimulus controller on an element
      *
      * @param string $controller
-     * @param array<string, string> $values
+     * @param array<string, mixed> $values
      * @return HtmlString
      */
     function stimulus_controller(string $controller, array $values = [])
