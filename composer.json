@@ -1,5 +1,5 @@
 {
-    "name": "flixtechs-labs/turbo-laravel-helpers",
+    "name": "flixtechs-labs/stimulus-extra",
     "description": "The missing laravel blade helpers for turbo and stimulus",
     "type": "library",
     "license": "MIT",
