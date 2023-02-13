@@ -1,12 +1,12 @@
 
 <p align="center">
-    <a href="https://packagist.org/packages/flixtechs-labs/turbo-laravel-helpers">
+    <a href="https://packagist.org/packages/flixtechs-labs/stimulus-extra">
         <img src="https://img.shields.io/packagist/dt/flixtechs-labs/turbo-laravel-helpers" alt="Total Downloads">
     </a>
-    <a href="https://packagist.org/packages/flixtechs-labs/turbo-laravel-helper">
+    <a href="https://packagist.org/packages/flixtechs-labs/stimulus-extra">
         <img src="https://img.shields.io/packagist/v/flixtechs-labs/turbo-laravel-helpers" alt="Latest Stable Version">
     </a>
-    <a href="https://packagist.org/packages/flixtechs-labs/turbo-laravel-helperl">
+    <a href="https://packagist.org/packages/flixtechs-labs/stimulus-extra">
         <img src="https://img.shields.io/packagist/l/flixtechs-labs/turbo-laravel-helpers" alt="License">
     </a>
 </p>
@@ -20,7 +20,7 @@ Inspired by Symfony UX Stimulus.
 ## Installation
 
 ```bash
-  composer require flixtechs-labs/turbo-laravel-helpers
+  composer require flixtechs-labs/stimulus-extra
 ```
     
 ## Usage
