@@ -13,7 +13,7 @@
 
 # Stimulus Laravel Helpers
 
-The missing stimulus helpers for laravel blade! This package contains a bunch of helpers that pairs nicely with `hotwired/stimulus-laravel` package. 
+The missing stimulus helpers for laravel blade! This package contains a bunch of helpers that pair nicely with `hotwired/stimulus-laravel` package. 
 Inspired by Symfony UX Stimulus.
 
 
