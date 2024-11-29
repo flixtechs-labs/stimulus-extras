@@ -26,9 +26,9 @@ Inspired by Symfony UX Stimulus.
 ## Usage
 The are 3 main helpers 
 
-- `stimulus_controller()` to add a controller
-- `stimulus_action()` to specifiy the action
-- `stimulus_target()` to specifiy the target
+- `stimulus_controller(string $controller, array $values)` to add a controller
+- `stimulus_action(string $controller, string $method, ?string $event)` to specifiy the action
+- `stimulus_target(string $controller, string $target)` to specifiy the target
 
 
 ```blade
@@ -58,6 +58,14 @@ export default class extends Controller {
     }
 }
 ```
+
+### Passing Stimulus Values
+You can pass values to your Stimulus Controller and they will be JSON serialized automatically
+```blade
+<div {{ stimulus_controller('cart',['data' => $chartData]) }}>
+</div>
+```
+
 
 
 
