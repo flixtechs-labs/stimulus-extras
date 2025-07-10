@@ -82,7 +82,7 @@ if (!function_exists('stimulus_action')) {
      * @param array<string, string> $params
      * @return HtmlString
      */
-    function stimulus_action(string $controller, string $action, string $event = null, array $params = []): HtmlString
+    function stimulus_action(string $controller, string $action, ?string $event = null, array $params = []): HtmlString
     {
         $provider = new ActionProvider();
 
